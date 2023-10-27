@@ -56,7 +56,6 @@
     "fill-range": "^7.0.1",
     "find-up": "^4.1.0",
     "fs.realpath": "^1.0.0",
-    "fsevents": "platform = 'darwin' ? '^2.3.3' : 'ignore'",
     "function-bind": "^1.1.1",
     "gensync": "^1.0.0-beta.2",
     "get-caller-file": "^2.0.5",
