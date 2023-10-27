@@ -21,5 +21,5 @@ jobs:
           node-version: lts/*
           cache: 'npm'
       - run: sed -i '/fsevents/d' package-lock.json
-      - run: npm ci
+      - run: npm install
       - run: npm test
