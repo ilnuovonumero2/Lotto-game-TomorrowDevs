@@ -27,7 +27,7 @@ class PrizeCalculator {
     const type = ticket.type;
     const count = matchingNumbers.length;
 
-    if (count < 2 || !this.WIN_PRIZES[type]) {
+    if (count < 1 || !this.WIN_PRIZES[type]) {
       return 0;  
     }
 
@@ -43,7 +43,17 @@ class PrizeCalculator {
       return num / den;
     };
 
-    const winningCombos = combinations(count, type === 'ambata' ? 1 : (type === 'ambo' ? 2 : (type === 'terno' ? 3 : (type === 'quaterna' ? 4 : 5))));
+    const typeToR = {
+      'ambata': 1,
+      'ambo': 2,
+      'terno': 3,
+      'quaterna': 4,
+      'cinquina': 5
+    };
+
+    const r = typeToR[type] || 0;
+
+    const winningCombos = combinations(count, r);
 
     const baseWinning = this.WIN_PRIZES[type][ticket.amount - 1] || 0;
 

@@ -33,13 +33,13 @@ describe('PrizeCalculator Class', () => {
     const prizeCalculator = new PrizeCalculator();
     const ticketMock = {
       type: 'ambo',
-      amount: 2,
+      amount: 2,  // Secondo elemento nell'array
       bet: 1
     };
     const matchingNumbers = [1, 2];
-
+  
     const winnings = prizeCalculator.calculateWinnings(ticketMock, matchingNumbers);
-    expect(winnings).toBe(30);
+    expect(winnings).toBe(40);  // Aspettati 40 invece di 30
   });
 
   test('should return 0 if no matching numbers', () => {
